@@ -41,6 +41,6 @@ frontend http
 
 backend web-backend
         balance roundrobin
-        http-request add-header X-Forwarded-Proto https if { ssl_fc }
+        redirect scheme https if !{ ssl_fc }
         server  web-01 54.146.239.63:80 check
         server  web-02 18.207.96.192:80 check
