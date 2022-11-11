@@ -33,14 +33,13 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
-frontend http
+frontend karanii.tech
+        mode http
         bind *:80
-	bind *:443 ssl crt /etc/haproxy/ssl/www.karanii.tech
-        http-request set-header X-Forwarded-Proto http
+	    bind *:443 ssl crt /etc/haproxy/ssl/www.karanii.tech.pem
         default_backend web-backend
 
 backend web-backend
         balance roundrobin
-        redirect scheme https if !{ ssl_fc }
         server  web-01 54.146.239.63:80 check
         server  web-02 18.207.96.192:80 check
