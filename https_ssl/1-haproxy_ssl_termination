@@ -36,7 +36,7 @@ defaults
 frontend karanii.tech
         mode http
         bind *:80
-	    bind *:443 ssl crt /etc/haproxy/ssl/www.karanii.tech.pem
+	    bind *:443 ssl crt /etc/letsencrypt/live/www.karanii.tech/fullchain.pem
         default_backend web-backend
 
 backend web-backend
