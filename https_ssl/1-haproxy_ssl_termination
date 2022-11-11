@@ -33,10 +33,10 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
-frontend http
+frontend www.karanii.tech
         mode http
         bind *:80
-	    bind *:443 ssl crt  /etc/ssl/www.karanii.tech/www.karanii.tech.pem
+	    bind *:443 ssl crt /etc/ssl/certs/www.karanii.tech.pem
         default_backend web-backend
 
 backend web-backend
