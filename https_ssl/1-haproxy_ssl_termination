@@ -41,7 +41,7 @@ defaults
 
 frontend http
         bind *:80
-	bind *:443 ssl crt /etc/haproxy/ssl/www.beline.tech.pem
+	bind *:443 ssl crt /etc/haproxy/ssl/www.karanii.tech.pem
         http-request set-header X-Forwarded-Proto http
         default_backend web-backend
 
